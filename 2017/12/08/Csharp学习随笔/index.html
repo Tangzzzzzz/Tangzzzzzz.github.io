@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/12 | 小卓的博客</title>
+  <title>c#学习随笔 | 小卓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小卓的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+  <meta name="description" content="访问修饰符">
+<meta name="keywords" content="原创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c#学习随笔">
+<meta property="og:url" content="http://yoursite.com/2017/12/08/Csharp学习随笔/index.html">
 <meta property="og:site_name" content="小卓的博客">
+<meta property="og:description" content="访问修饰符">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201108/8/0_1312777926f8T1.gif">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201108/8/0_1312777951sg1f.gif">
+<meta property="og:updated_time" content="2017-12-08T05:17:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小卓的博客">
+<meta name="twitter:title" content="c#学习随笔">
+<meta name="twitter:description" content="访问修饰符">
+<meta name="twitter:image" content="http://hi.csdn.net/attachment/201108/8/0_1312777926f8T1.gif">
   
     <link rel="alternative" href="/atom.xml" title="小卓的博客" type="application/atom+xml">
   
@@ -155,36 +163,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Csharp学习随笔" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      c#学习随笔
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/Csharp学习随笔/" class="archive-article-date">
+
+        
+        <a href="/2017/12/08/Csharp学习随笔/" class="archive-article-date">
   	<time datetime="2017-12-07T17:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/Csharp学习随笔/">c#学习随笔</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><a id="more"></a>
+<p>public–&gt;internal–&gt;protectedinternal–&gt;protected–&gt;private<br><br>无限制–&gt;本项目–&gt;本、子类、其他类–&gt;本、子类–&gt;本类</p>
+<h3 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h3><p>值类型：结构体、枚举、可空类型<br><br>值类型变量声明后，不管是否已经赋值，编译器为其分配内存。<br><img src="http://hi.csdn.net/attachment/201108/8/0_1312777926f8T1.gif" alt=""><br>引用类型：数组、类、接口、委托、object、字符串<br><br>当声明一个引用类型时，在栈中分配一小片内存用于容纳一个地址，当使用 new 创建一个类的实例时，分配堆上的空间，并把堆上空间的地址保存到栈上分配的小片空间中。<br><img src="http://hi.csdn.net/attachment/201108/8/0_1312777951sg1f.gif" alt=""></p>
+<h3 id="抽象类、虚函数、接口"><a href="#抽象类、虚函数、接口" class="headerlink" title="抽象类、虚函数、接口"></a>抽象类、虚函数、接口</h3><ul>
+<li>抽象类：可以包含抽象方法和非抽象方法，无法被实例化只能被继承，子类必须重写所有的抽象方法<br></li>
+<li>抽象函数：<br><code>public abstract class Animal</code><br><br><code>{</code><br><br><code>public abstract void Sleep();</code><br><br><code>public abstract void Eat();</code><br><br><code>}</code><br></li>
+<li>虚函数：必须有自己的方法，哪怕是{}这样的空方法,可以被重写<br></li>
+<li>接口：和抽象类相似，但接口除了可以包含方法之外还可以包含属性、索引器、事件，而且这些成员都被定义为公有的。在派生类中除了必须实现方法外还必须实现这些成员变量。<br>一个类只能继承另一个类，但是可以继承好几个接口<br></li>
+</ul>
+<h3 id="常量修饰符"><a href="#常量修饰符" class="headerlink" title="常量修饰符"></a>常量修饰符</h3><p>readonly<br><br>可以在声明和构造函数中出现<br><br>const<br><br>只能在声明中出现</p>
+<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><ul>
+<li>前序遍历：中左右</li>
+<li>中序遍历：左中右</li>
+<li>后序遍历：左右中</li>
+</ul>
+<h3 id="二进制原码、反码、补码"><a href="#二进制原码、反码、补码" class="headerlink" title="二进制原码、反码、补码"></a>二进制原码、反码、补码</h3><p>原码：二进制本身<br><br>反码：正数不变，负数除符号位，其余取反<br><br>补码：正数不变，负数除符号位，其余取反，结果+1<br><br>对于一个正数，二进制最右边的为1的位从1变为0等价于(n-1)&amp;(n)</p>
+<h3 id="属性访问器"><a href="#属性访问器" class="headerlink" title="属性访问器"></a>属性访问器</h3><p>get:读取或计算<br><br>set：设置或写入</p>
+<h3 id="ref、out"><a href="#ref、out" class="headerlink" title="ref、out"></a>ref、out</h3><p>ref和out使参数按引用传递，可以让方法返回多个值<br><br>ref有进有出，out只出不进</p>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><ul>
+<li>多用于定义多个不同的状态，如人物状态，游戏开始结束状态<br></li>
+<li>通过“|”合并多个状态:Status=StatusEffect.Poison|StatusEffect.Slow<br></li>
+<li>通过“&amp;，～”移出状态：Status&amp;=~StatusEffect.Poison<br></li>
+<li>通过“&amp;”查看位值：if((Status&amp;StatusEffect.Posion)==StatusEffect.Poison)</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>string.Format:不需要console就可以用{0}{1}等代替参数</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -196,149 +227,162 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/08/Csharp学习随笔/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/unity学习随笔/" class="archive-article-date">
-  	<time datetime="2017-12-07T16:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/08/unity学习随笔/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">unity学习随笔</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/unity学习随笔/">unity学习随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#访问修饰符"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;"></a>&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值类型和引用类型"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;" class="headerlink" title="&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;"></a>&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类、虚函数、接口"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;" class="headerlink" title="&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;"></a>&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量修饰符"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;"></a>&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树遍历"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;" class="headerlink" title="&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;"></a>&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二进制原码、反码、补码"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;" class="headerlink" title="&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;"></a>&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性访问器"><span class="toc-number">7.</span> <span class="toc-text"><a href="#&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;" class="headerlink" title="&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;"></a>&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ref、out"><span class="toc-number">8.</span> <span class="toc-text"><a href="#ref&#x3001;out" class="headerlink" title="ref&#x3001;out"></a>ref&#x3001;out</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-number"></span> <span class="toc-text"><a href="#&#x679A;&#x4E3E;" class="headerlink" title="&#x679A;&#x4E3E;"></a>&#x679A;&#x4E3E;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/开发你喜欢的游戏/" class="archive-article-date">
-  	<time datetime="2017-12-07T16:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/开发你喜欢的游戏/">开发你喜欢的游戏</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/前言/" class="archive-article-date">
-  	<time datetime="2017-12-07T16:41:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/前言/">前言</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+  
+    <section id="comments">
+<div id="disqus_thread"></div>
+<script>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/06/my-first-blog/" class="archive-article-date">
-  	<time datetime="2017-12-06T07:35:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/06/my-first-blog/">my first blog</a>
-    </h1>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tangzzzzzz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tangzzzzzz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -362,8 +406,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

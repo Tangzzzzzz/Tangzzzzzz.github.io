@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/12 | 小卓的博客</title>
+  <title>unity学习随笔 | 小卓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小卓的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+  <meta name="description" content="unity Attibute">
+<meta name="keywords" content="原创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity学习随笔">
+<meta property="og:url" content="http://yoursite.com/2017/12/08/unity学习随笔/index.html">
 <meta property="og:site_name" content="小卓的博客">
+<meta property="og:description" content="unity Attibute">
+<meta property="og:updated_time" content="2017-12-08T05:07:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小卓的博客">
+<meta name="twitter:title" content="unity学习随笔">
+<meta name="twitter:description" content="unity Attibute">
   
     <link rel="alternative" href="/atom.xml" title="小卓的博客" type="application/atom+xml">
   
@@ -155,74 +160,152 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-unity学习随笔" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/Csharp学习随笔/" class="archive-article-date">
-  	<time datetime="2017-12-07T17:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/Csharp学习随笔/">c#学习随笔</a>
+    <h1 class="article-title" itemprop="name">
+      unity学习随笔
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/unity学习随笔/" class="archive-article-date">
+        
+        <a href="/2017/12/08/unity学习随笔/" class="archive-article-date">
   	<time datetime="2017-12-07T16:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/unity学习随笔/">unity学习随笔</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="unity-Attibute"><a href="#unity-Attibute" class="headerlink" title="unity Attibute"></a>unity Attibute</h2><a id="more"></a>
+<ul>
+<li><strong>Unity Engine<br></strong></li>
+<li>[AddComponentMenu(“/“)]<br>在菜单栏新增选项<br></li>
+<li>[ContextMenu(“”)]<br>在inspector右上角的齿轮增加选项<br></li>
+<li>[ContextMenuItem(“名字”,”执行函数名”)]<br>在inspector右键追加菜单<br></li>
+<li>[Disallow Multiple Component]<br>只能添加一个相同的组件<br></li>
+<li>[ExecuteInEditMode]<br>在非play模式也能执行start、update等方法<br></li>
+<li>[Header(“”)]<br>在inspector变量上方加标题<br></li>
+<li>[HideInInspector]<br>在inspector中隐藏变量<br></li>
+<li>[ImageEffectOpaque]<br>在onrenderimage上使用，是渲染顺序变成非透明之后，透明之前<br></li>
+<li>[ImageEffectTransformsToLDR]<br>渲染从HDR–&gt;LDR<br></li>
+<li>[MultilineAttribute]<br>能在inspector上使string类型输入多行字符<br></li>
+<li>[NotConvertedAttribute]<br>在变量上使用，可以指定该变量在build的时候，不要转换为目标平台的类型。<br></li>
+<li>[Range（0，100）]<br>在int或float上使用，限制输入范围<br></li>
+<li>[RequireComponent] <br>在Class上使用，添加对另一个Component的依赖。当该Class被添加到一个GameObject上的时候，如果这个GameObject不含有依赖的Component，会自动添加该Component。<br>且该Componet不可被移除。<br></li>
+<li>[RPC]<br>在方法上添加该属性，可以网络通信中对该方法进行RPC调用。<br></li>
+<li>[RuntimeInitializeOnLoadMethodAttribute]在游戏启动时，会自动调用添加了该属性的方法。<br></li>
+<li>[SelectionBaseAttribute]<br>当一个GameObject含有使用了该属性的Component的时候，在SceneView中选择该GameObject，Hierarchy上面会自动选中该GameObject的Parent。<br></li>
+<li>[SerializeField]将private变量序列化<br></li>
+<li>[SharedBetweenAnimatorsAttribute]<br>用于StateMachineBehaviour上，不同的Animator将共享这一个StateMachineBehaviour的实例，可以减少内存占用。<br></li>
+<li>[SpaceAttribute]<br>使用该属性可以在Inspector上增加一些空位。<br></li>
+<li>[TextAreaAttribute]<br>该属性可以把string在Inspector上的编辑区变成一个TextArea。<br></li>
+<li>[TooltipAttribute]<br>这个属性可以为变量上生成一条tip，当鼠标指针移动到Inspector上时候显示。<br><br></li>
+<li><strong>UnityEngine.Serialization</strong></li>
+<li>[FormerlySerializedAs(“”)]<br>该属性可以令变量以另外的名称进行序列化，并且在变量自身修改名称的时候，不会丢失之前的序列化的值。<br></li>
+<li><strong>UnityEngine.Editor</strong></li>
+<li>[CallbackOrderAttribute]<br>定义Callback的顺序<br></li>
+<li>[CanEditMultipleObjects]<br>Editor同时编辑多个Component的功能<br></li>
+<li>[CustomEditor]<br>声明一个Class为自定义Editor的Class<br></li>
+<li>[CustomPreviewAttribute]<br>将一个class标记为指定类型的自定义预览<br></li>
+<li>[CustomPropertyDrawer]<br>标记自定义PropertyDrawer时候使用。<br></li>
+<li>[DrawGizmo]<br>可以在Scene视图中显示自定义的Gizmo<br></li>
+<li>[InitializeOnLoadAttribute]<br>在Class上使用，可以在Unity启动的时候，运行Editor脚本。需要该Class拥有静态的构造函数。<br></li>
+<li>[InitializeOnLoadMethodAttribute]<br>在Method上使用，是InitializeOnLoad的Method版本。Method必须是static的。<br></li>
+<li>[MenuItem]<br>在方法上使用，可以在Editor中创建一个菜单项，点击后执行该方法，可以利用该属性做很多扩展功能。 需要方法为static。<br></li>
+<li><p>[PreferenceItem]<br>使用该属性可以定制Unity的Preference界面。<br></p>
+</li>
+<li><p><strong>UnityEditor.Callbacks</strong></p>
+</li>
+<li>[OnOpenAssetAttribute]<br>在打开一个Asset后被调用。<br>  </li>
+<li>[PostProcessBuildAttribute(1)]<br>该属性是在build完成后，被调用的callback。同时具有多个的时候，可以指定先后顺序。<br>  </li>
+<li>[PostProcessSceneAttribute]<br>使用该属性的函数，在scene被build之前，会被调用。<br>  </li>
+</ul>
+<h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p>委托是一个类，它定义了方法的类型，使得可以将方法当作另一个方法的参数来传递<br><br>使用委托可以将多个方法绑定到同一个委托变量，调用该变量时会依次执行所有绑定的方法（+=，-=）<br><br>InvokeRepeating(“方法名”,延时,重复间隔)<br><br>CancelInvoke(“方法名”)<br><br><a href="http://www.cnblogs.com/JimmyZhang/archive/2007/09/23/903360.html" target="_blank" rel="noopener">讲解委托和事件的经典——传送门</a></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>1.声明委托：public delegate void 名字+EventHandle(对象，观察的参数)<br><br>2.声明事件：public event 委托全名 名字<br><br>3.注册事件<br><br>4.在观察值处引用方法<br> </p>
+<ul>
+<li>符合.net规范的事件格式 <br><br>假设事件烧水<br><br>1.声明委托:<br><code>public delegate void BoiledEventHandle(object sender,BoiledEventArgs e);</code><br><br>2.声明事件:<br><code>public event BoiledEventHandle Boiled;</code><br><br>3.定义观察对象的参数:<br><code>public class BoiledEventArgs : EventArgs{</code><br><br>  <code>public readonly int temperature;</code><br><br>  <code>public BoiledEventArgs(int temperature){</code><br><br>  <code>this.temperature=temperature;}</code><br><br><code>}</code><br><br>4.引用方法<br><br><code>if(temperature&gt;95){</code><br><br><code>if(Boiled!=null)</code><br><br><code>Boiled(this.e);</code><br><code>}</code><br><br>5.申请观察<br><br><code>public class Alarm{</code><br><br><code>public void MakeAlert(object sender,Heater.BoiledEventArgs e){</code><br><br><code>Heater heater=(Heater)sender;</code><br><br><code>console.write...;}</code><br><br><code>}</code><br><br>6.注册方法<br><br><code>Heater heater=new Heater();</code><br><br><code>heater.Boiled += alarm.MakeAlert;</code></li>
+</ul>
+<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>IEnumerator forward : 迭代器<br><br>yield return : 返回迭代器并保存状态，下次继续<br><br>协程用内存模拟栈</p>
+<h2 id="批量修改已导入的资源"><a href="#批量修改已导入的资源" class="headerlink" title="批量修改已导入的资源"></a>批量修改已导入的资源</h2><ol>
+<li>MenuItem</li>
+<li>foreach-&gt;selection.Getfiltered</li>
+<li>As</li>
+<li>path</li>
+<li>ModelImporter</li>
+<li>修改modle</li>
+<li>AssetDatabase</li>
+</ol>
+<h3 id="导入时自动修改"><a href="#导入时自动修改" class="headerlink" title="导入时自动修改"></a>导入时自动修改</h3><ol>
+<li>ModelImporter modelImporter=(ModelImporter)assetImpoter</li>
+<li>if(assetImporter.assetPath.Contains(“/CharacterSource/“))</li>
+<li>修改<br><br><a href="http://blog.csdn.net/dingd_158/article/details/51852194" target="_blank" rel="noopener">参考链接</a></li>
+</ol>
+<h2 id="全局光照GI"><a href="#全局光照GI" class="headerlink" title="全局光照GI"></a>全局光照GI</h2><p><a href="file:///Applications/Unity/Unity.app/Contents/Documentation/en/Manual/GlobalIllumination.html" target="_blank" rel="noopener">参考官方文档</a></p>
+<h2 id="动画控制器"><a href="#动画控制器" class="headerlink" title="动画控制器"></a>动画控制器</h2><ol>
+<li>Animator–&gt;Parameters(speed,direction)</li>
+<li>Base Layer–&gt;states–&gt;Motion、Other Layer</li>
+<li>transitions</li>
+<li>Avatar Mask</li>
+<li>Scripts(Set Bool(“Jump”,ture)、Set Float(“Speed”,Mathf.Lerp(h <em> h+v </em> v)))</li>
+<li>CameraFollow(Position–&gt;Vector3.Lerp、transform.LookAt(follow))</li>
+</ol>
+<h2 id="时间控制"><a href="#时间控制" class="headerlink" title="时间控制"></a>时间控制</h2><p>一般用于子弹间隔或者生成对象间隔等<br><br>Lasttime<br><br>Time.time<br><br>timeSpan<br><br>Instantiate(GameObject,Position,Rotation)</p>
+<h2 id="点积和叉积"><a href="#点积和叉积" class="headerlink" title="点积和叉积"></a>点积和叉积</h2><ul>
+<li>点积——Vector3.Dot<br><br>a·b&gt;0 : 0~90<br><br>a·b=0 : 垂直<br><br>a·b<0 :="" 90~180<br=""></0></li>
+<li>叉积——Vector3.Cross<br><br>axb : 右手定理，垂直于ab平面<br><br>Vector3.Cross(axb).y指向b方向</li>
+</ul>
+<h2 id="IK"><a href="#IK" class="headerlink" title="IK"></a>IK</h2><ol>
+<li>Creat GameObject Rigging player</li>
+<li>!IK : GameObject.Position = avatar.GetIkPosition(AvatarIkGoal.)</li>
+<li>IK : void OnAnimatorIK(int layerIndex){<br>if(layerIndex==0){}}<br><br>Position取决于球形控制器<br>avatar.SetIKPositionWeight(AvatarIKgoal.,1.0f)<br><br>avatar.SetIKPosition(AvatarIKGoal–,GameObject.Position)</li>
+</ol>
+<h2 id="碰撞"><a href="#碰撞" class="headerlink" title="碰撞"></a>碰撞</h2><ul>
+<li>OntriggerEnter<br><br>需要Collider<br><br>需要isTrigger<br><br>需要刚体</li>
+<li>OnCollisionEnter<br>需要Collider<br><br>触发方需要刚体<br><br>不能有isTrigger</li>
+</ul>
+<h2 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h2><ul>
+<li>Cursor.SetCursor(Texture2D,Vector2,CursorMode)贴图、位置、设置</li>
+<li>Cursor.lockState 是否锁定在屏幕中央</li>
+<li>Cursor.Visible 是否可见</li>
+</ul>
+<h2 id="AssetBundle"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</h2><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><ol>
+<li>设置批量修改assetbundleName的脚本</li>
+<li>规划好assetbundle的类型和数量</li>
+<li>(1) 随同游戏发布的AssetBundle——&gt;LZ4——&gt;LoadFromFile<br><br>(2)更新包、从服务端下载的asstbundle——&gt;LZMA——&gt;www.LoadFromCacheOrDownload<br><br>(3)自己加密的assetbundle——&gt;LZ4——&gt;LoadFromMemory<br><br>(4)自己压缩的AssetBundle——&gt;第三方压缩工具——&gt;LoadFromFileAsync</li>
+</ol>
+<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>LoadAsset、LoadAllAseet、LoadAssetAsync</p>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>unload<br>true:内存和对象<br>false:内存</p>
+<h2 id="射线"><a href="#射线" class="headerlink" title="射线"></a>射线</h2><ul>
+<li>ray、raycasthit、raycast<br></li>
+<li>Ray = new Ray(camera.main.transform.position,Camera.main.ScreenToWorldPoint(Input.MousePosition)-camera.main.transform.position x 99)<br></li>
+<li>Ray(起点，方向)</li>
+<li>RaycastHit hitInfo;存储射线碰撞信息 <br></li>
+<li>Physics.Raycast(ray,out hitInfo,999f)</li>
+</ul>
+<h2 id="Selection"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</h2><p>Selection Transform[] transform=Selection.transform<br><br>Selection.GetTransforms(SelectionMode.)<br><br>Unfiltered:整个选择<br>TopLevel:选择最顶层的对象<br>Deep:选择对象及其子对象<br>ExcludePrefab:排除预制<br>Editable:返回的对象需要能被修改<br>Assets:只返回assets中的对象<br>DeepAssets:如果选择包含文件夹则包含文件夹所有的对象</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>magnitude : 求长度<br></li>
+<li>G力 ： 物体高速运动或变化速度时受到的力（m/s2、N/kg）一般用g当单位，1G力=1g<br></li>
+<li>Destroy:内存中还存在<br></li>
+<li>DestroyImmediate:立即全部销毁<br></li>
+<li>transform.SetParent(要变化的父级，true则跟随父级一起变化)<br></li>
+<li>TransformDirection:变换成世界坐标<br></li>
+<li>GameObject.CreatPrimitive(Primitive.Sphere)创建一个基本形状</li>
+<li>A as B:类型强制转换</li>
+<li>AssetDataBase：访问asset中的资源</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -234,111 +317,171 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/08/unity学习随笔/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/开发你喜欢的游戏/" class="archive-article-date">
-  	<time datetime="2017-12-07T16:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/12/08/Csharp学习随笔/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          c#学习随笔
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/08/开发你喜欢的游戏/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开发你喜欢的游戏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/开发你喜欢的游戏/">开发你喜欢的游戏</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#unity-Attibute"><span class="toc-number">1.</span> <span class="toc-text"><a href="#unity-Attibute" class="headerlink" title="unity Attibute"></a>unity Attibute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#委托"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x59D4;&#x6258;" class="headerlink" title="&#x59D4;&#x6258;"></a>&#x59D4;&#x6258;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x4E8B;&#x4EF6;" class="headerlink" title="&#x4E8B;&#x4EF6;"></a>&#x4E8B;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协程"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x534F;&#x7A0B;" class="headerlink" title="&#x534F;&#x7A0B;"></a>&#x534F;&#x7A0B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量修改已导入的资源"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;" class="headerlink" title="&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;"></a>&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入时自动修改"><span class="toc-number">5.1.</span> <span class="toc-text"><a href="#&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;" class="headerlink" title="&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;"></a>&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全局光照GI"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5168;&#x5C40;&#x5149;&#x7167;GI" class="headerlink" title="&#x5168;&#x5C40;&#x5149;&#x7167;GI"></a>&#x5168;&#x5C40;&#x5149;&#x7167;GI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动画控制器"><span class="toc-number">7.</span> <span class="toc-text"><a href="#&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;" class="headerlink" title="&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;"></a>&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间控制"><span class="toc-number">8.</span> <span class="toc-text"><a href="#&#x65F6;&#x95F4;&#x63A7;&#x5236;" class="headerlink" title="&#x65F6;&#x95F4;&#x63A7;&#x5236;"></a>&#x65F6;&#x95F4;&#x63A7;&#x5236;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点积和叉积"><span class="toc-number">9.</span> <span class="toc-text"><a href="#&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;" class="headerlink" title="&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;"></a>&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IK"><span class="toc-number">10.</span> <span class="toc-text"><a href="#IK" class="headerlink" title="IK"></a>IK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#碰撞"><span class="toc-number">11.</span> <span class="toc-text"><a href="#&#x78B0;&#x649E;" class="headerlink" title="&#x78B0;&#x649E;"></a>&#x78B0;&#x649E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鼠标样式"><span class="toc-number">12.</span> <span class="toc-text"><a href="#&#x9F20;&#x6807;&#x6837;&#x5F0F;" class="headerlink" title="&#x9F20;&#x6807;&#x6837;&#x5F0F;"></a>&#x9F20;&#x6807;&#x6837;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AssetBundle"><span class="toc-number">13.</span> <span class="toc-text"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打包"><span class="toc-number">13.1.</span> <span class="toc-text"><a href="#&#x6253;&#x5305;" class="headerlink" title="&#x6253;&#x5305;"></a>&#x6253;&#x5305;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载"><span class="toc-number">13.2.</span> <span class="toc-text"><a href="#&#x52A0;&#x8F7D;" class="headerlink" title="&#x52A0;&#x8F7D;"></a>&#x52A0;&#x8F7D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-number">13.3.</span> <span class="toc-text"><a href="#&#x5378;&#x8F7D;" class="headerlink" title="&#x5378;&#x8F7D;"></a>&#x5378;&#x8F7D;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#射线"><span class="toc-number">14.</span> <span class="toc-text"><a href="#&#x5C04;&#x7EBF;" class="headerlink" title="&#x5C04;&#x7EBF;"></a>&#x5C04;&#x7EBF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">16.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/08/前言/" class="archive-article-date">
-  	<time datetime="2017-12-07T16:41:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/08/前言/">前言</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/06/my-first-blog/" class="archive-article-date">
-  	<time datetime="2017-12-06T07:35:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/06/my-first-blog/">my first blog</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+  
+    <section id="comments">
+<div id="disqus_thread"></div>
+<script>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tangzzzzzz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tangzzzzzz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
   
 
-    
+  
 
 
           </div>
@@ -362,8 +505,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
