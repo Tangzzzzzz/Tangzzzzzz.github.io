@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>unity学习随笔 | 小卓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="unity Attibute">
+  <meta name="description" content="unity Attribute">
 <meta name="keywords" content="原创">
 <meta property="og:type" content="article">
 <meta property="og:title" content="unity学习随笔">
 <meta property="og:url" content="http://yoursite.com/2017/12/08/unity学习随笔/index.html">
 <meta property="og:site_name" content="小卓的博客">
-<meta property="og:description" content="unity Attibute">
-<meta property="og:updated_time" content="2017-12-08T08:36:26.000Z">
+<meta property="og:description" content="unity Attribute">
+<meta property="og:updated_time" content="2017-12-28T05:23:52.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity学习随笔">
-<meta name="twitter:description" content="unity Attibute">
+<meta name="twitter:description" content="unity Attribute">
   
     <link rel="alternative" href="/atom.xml" title="小卓的博客" type="application/atom+xml">
   
@@ -180,7 +180,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="unity-Attibute"><a href="#unity-Attibute" class="headerlink" title="unity Attibute"></a>unity Attibute</h2><a id="more"></a>
+        <h2 id="unity-Attribute"><a href="#unity-Attribute" class="headerlink" title="unity Attribute"></a>unity Attribute</h2><a id="more"></a>
 <ul>
 <li><strong>Unity Engine<br></strong></li>
 <li>[AddComponentMenu(“/“)]<br>在菜单栏新增选项<br></li>
@@ -229,7 +229,7 @@
 <ul>
 <li>符合.net规范的事件格式 <br><br>假设事件烧水<br><br>1.声明委托:<br><code>public delegate void BoiledEventHandle(object sender,BoiledEventArgs e);</code><br><br>2.声明事件:<br><code>public event BoiledEventHandle Boiled;</code><br><br>3.定义观察对象的参数:<br><code>public class BoiledEventArgs : EventArgs{</code><br><br>  <code>public readonly int temperature;</code><br><br>  <code>public BoiledEventArgs(int temperature){</code><br><br>  <code>this.temperature=temperature;}</code><br><br><code>}</code><br><br>4.引用方法<br><br><code>if(temperature&gt;95){</code><br><br><code>if(Boiled!=null)</code><br><br><code>Boiled(this.e);</code><br><code>}</code><br><br>5.申请观察<br><br><code>public class Alarm{</code><br><br><code>public void MakeAlert(object sender,Heater.BoiledEventArgs e){</code><br><br><code>Heater heater=(Heater)sender;</code><br><br><code>console.write...;}</code><br><br><code>}</code><br><br>6.注册方法<br><br><code>Heater heater=new Heater();</code><br><br><code>heater.Boiled += alarm.MakeAlert;</code></li>
 </ul>
-<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>IEnumerator forward : 迭代器<br><br>yield return : 返回迭代器并保存状态，下次继续<br><br>协程用内存模拟栈</p>
+<h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>IEnumerator forward : 迭代器<br><br>yield return : 返回迭代器并保存状态，下次继续<br><br>协程用内存模拟栈<br><br>可以用协程实现颜色渐变<br><br>IEnumerator XieCheng(){<br>yield return 0;<br>}<br><br>StartCoroutine(IEnumerator);<br><br>StartAllCoroutine();<br><br>StopXXX;<br><br>协程的开启和关闭需要使用同一个格式，即是都是用字符串，或者都是用协程名字,使用协程名字的时候需要在开始协程的时候或者初始化的时候<br>将协程实例化</p>
 <h2 id="批量修改已导入的资源"><a href="#批量修改已导入的资源" class="headerlink" title="批量修改已导入的资源"></a>批量修改已导入的资源</h2><ol>
 <li>MenuItem</li>
 <li>foreach-&gt;selection.Getfiltered</li>
@@ -258,19 +258,29 @@
 <li>点积——Vector3.Dot<br><br>a·b&gt;0 : 0~90<br><br>a·b=0 : 垂直<br><br>a·b<0 :="" 90~180<br=""></0></li>
 <li>叉积——Vector3.Cross<br><br>axb : 右手定理，垂直于ab平面<br><br>Vector3.Cross(axb).y指向b方向</li>
 </ul>
-<h2 id="IK"><a href="#IK" class="headerlink" title="IK"></a>IK</h2><ol>
-<li>Creat GameObject Rigging player</li>
-<li>!IK : GameObject.Position = avatar.GetIkPosition(AvatarIkGoal.)</li>
-<li>IK : void OnAnimatorIK(int layerIndex){<br>if(layerIndex==0){}}<br><br>Position取决于球形控制器<br>avatar.SetIKPositionWeight(AvatarIKgoal.,1.0f)<br><br>avatar.SetIKPosition(AvatarIKGoal–,GameObject.Position)</li>
-</ol>
 <h2 id="碰撞"><a href="#碰撞" class="headerlink" title="碰撞"></a>碰撞</h2><ul>
-<li>OntriggerEnter<br><br>需要Collider<br><br>需要isTrigger<br><br>需要刚体</li>
-<li>OnCollisionEnter<br>需要Collider<br><br>触发方需要刚体<br><br>不能有isTrigger</li>
+<li>OntriggerEnter(stay、exit)<br><br>都需要Collider<br><br>需要isTrigger<br><br>需要刚体</li>
+<li>OnCollisionEnter(stay、exit)<br><br>都需要Collider<br><br>触发方需要刚体<br><br>都不能有isTrigger</li>
+<li>射线碰撞</li>
+<li>角色碰撞器不需要刚体也能碰撞</li>
 </ul>
 <h2 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h2><ul>
 <li>Cursor.SetCursor(Texture2D,Vector2,CursorMode)贴图、位置、设置</li>
 <li>Cursor.lockState 是否锁定在屏幕中央</li>
 <li>Cursor.Visible 是否可见</li>
+</ul>
+<h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><ul>
+<li>void OnMouseDown(){}鼠标在2DUI或者碰撞网格上按下时执行一次</li>
+<li>void OnMouseUp(){}抬起时执行一次，可以离开物体</li>
+<li>void OnMouseDrag(){}拖拽时一直执行，可以离开物体</li>
+<li>void OnMouseEnter(){}鼠标光标进入物体身上时执行一次</li>
+<li>void OnMouseExit(){}离开时执行一次</li>
+<li>void OnMouseOver(){}鼠标移到物体身上时一直执行</li>
+<li>void OnMouseUpAsButton(){}抬起时执行一次，不可以离开物体</li>
+</ul>
+<h2 id="Mathf"><a href="#Mathf" class="headerlink" title="Mathf"></a>Mathf</h2><ul>
+<li>静态常量：角度与弧度的转换、无穷大、无穷小、PI、Epsilon无限趋近于+零的数</li>
+<li>静态方法：三角函数、ABS绝对值、Clamp（将Value限定在min和max之间）、CEIL向上取整、floor向下取整、Pow立方、Sqrt根号DeltaAngle返回角度差如（1080，90）、MAX最大值，最小值、Lerp插值运算、LerpAngle角度插值、MoveTowards匀速运动，PINGPONG乒乓运动</li>
 </ul>
 <h2 id="AssetBundle"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</h2><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><ol>
 <li>设置批量修改assetbundleName的脚本</li>
@@ -285,6 +295,8 @@
 <li>Ray(起点，方向)</li>
 <li>RaycastHit hitInfo;存储射线碰撞信息 <br></li>
 <li>Physics.Raycast(ray,out hitInfo,999f)</li>
+<li>Physics.Raycast等一系列重载方法如Physics.Raycast(ray,out hitInfo,LayerMask（“能发生碰撞的层”）)</li>
+<li>2D和3D的射线检测类似，为Physics2D</li>
 </ul>
 <h2 id="Selection"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</h2><p>Selection Transform[] transform=Selection.transform<br><br>Selection.GetTransforms(SelectionMode.)<br><br>Unfiltered:整个选择<br>TopLevel:选择最顶层的对象<br>Deep:选择对象及其子对象<br>ExcludePrefab:排除预制<br>Editable:返回的对象需要能被修改<br>Assets:只返回assets中的对象<br>DeepAssets:如果选择包含文件夹则包含文件夹所有的对象</p>
 <h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><ul>
@@ -296,16 +308,215 @@
 <li>Slider滑动条<br><br>float toolBarValue0;<br>  float toolBarValue1;<br>  toolBarValue0 = GUI.VerticalSlider(new Rect(200,200,30,100),toolBarValue0,100,0);  <pre><code>toolBarValue1 = GUI.HorizontalSlider(new Rect(200,180,100,30),toolBarValue1,0,100);       
 </code></pre></li>
 </ul>
+<h2 id="Drawcall"><a href="#Drawcall" class="headerlink" title="Drawcall"></a>Drawcall</h2><p>一次Drawcall就是openGL中cpu将材质贴图顶点等信息传递给gpu处理绘制的一次过程，unity的优化主要就是通过减少drawcall来实现的，而要减少drawcall，即是减少传递次数，则需要一次传递多传输一点内容，所以需要有相同的材质贴图或顶点信息即可<br><br>具体的drawcall信息可以在Frame Debugger里面监测</p>
+<h2 id="ugui使用总结（转）"><a href="#ugui使用总结（转）" class="headerlink" title="ugui使用总结（转）"></a>ugui使用总结（转）</h2><ul>
+<li>设计UI时要考虑重用性，如一些边框、按钮等，这些作为共享资源，放在1~3张大图集中，称为重用图集；</li>
+<li>其它非重用UI按照功能模块进行划分，每个模块使用1~2张图集，为功能图集；</li>
+<li>对于一些UI，如果同时用到功能图集与重用图集，但是其功能图集剩下的“空位”较多，则可以考虑将用到的重用图集中的元素单独拎出来，合入功能图集中，从而做到让UI只依赖于功能图集。也就是通过一定的冗余，来达到性能的提升。</li>
+<li>有相同材质和纹理的UI元素是可以Batch的，可以Batch的UI上下叠在一块不会影响性能，但是如果不能Batch的UI元素叠在一块，就会增加Drawcall开销。</li>
+<li>要注意UI元素间的层叠关系，建议用“T”工具查看其矩形大小，因为有些图片透明，但是却叠在其它UI上面了，然后又无法Batch的话，就会无故多许多Drawcall；</li>
+<li>UI中出现最多的就是Image与Text组件，当Text叠在Image上面（如Button)，然后Text上又叠了一个图片时，就会至少多2个Drawcall，可以考虑将字体直接印在下面的图片上；</li>
+<li>有些情况可以考虑人为增加层级从而减少Drawcall，比如一个Text的层级为0，另一个可Batch的Text叠在一个图片A上，层级为1，那此时2个Text因为层级不同会安排2个Drawcall，但如果在第一个Text下放一个透明的图片（与图片A可Batch），那两个Text的层级就一致了，Drawcall就可以减少一个。</li>
+<li>应该尽量避免使用Mask，其实Mask的功能有些时候可以变通实现，比如设计一个边框，让这个边框叠在最上面，底下的UI移动时，就会被这个边框遮住；</li>
+<li>如果要使用Mask时，需要评估下Mask会带来的性能损耗，并尽量将其降到最低。比如Mask内的UI是动态生成的话（像List组件），那么需要注意生成的UI之间是否有重叠的现象；<br><br><a href="http://www.jianshu.com/p/061e67308e5f" target="_blank" rel="noopener">原文地址</a></li>
+</ul>
+<h2 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h2><p>平行光：太阳<br><br>点光源：灯泡<br><br>聚光灯：手电筒<br><br>区域光：烘培的时候补光<br><br>烘培需要设置为静态，灯光需要设置baked和shadow可变光设置mixed</p>
+<h2 id="出现miss的情况"><a href="#出现miss的情况" class="headerlink" title="出现miss的情况"></a>出现miss的情况</h2><ul>
+<li>脚本名和脚本类名不一致</li>
+<li>预制体实例丢失预制体</li>
+<li>脚本内public的对象没有赋值或发生了变动</li>
+</ul>
+<h2 id="日志输出"><a href="#日志输出" class="headerlink" title="日志输出"></a>日志输出</h2><ul>
+<li>print：普通输出</li>
+<li>debug.Log：普通输出</li>
+<li>debug.LogWarming：警告输出</li>
+<li>debug.LogError：错误输出</li>
+<li>在继承MonoBehaviour的情况下，print等价于debug.Log</li>
+</ul>
+<h2 id="获取游戏物体的几种方法"><a href="#获取游戏物体的几种方法" class="headerlink" title="获取游戏物体的几种方法"></a>获取游戏物体的几种方法</h2><ol>
+<li>通过Public定义和拖拽物体</li>
+<li>通过transform.Find查找当前物体下的子物体</li>
+<li>通过GameObject.Find查找所有的物体，返回名字对应的第一个</li>
+<li>通过GameObject.FindWithTag查找对应Tag的物体</li>
+</ol>
+<h2 id="场景载入"><a href="#场景载入" class="headerlink" title="场景载入"></a>场景载入</h2><p>SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)</p>
+<h2 id="事件函数"><a href="#事件函数" class="headerlink" title="事件函数"></a>事件函数</h2><p>从上到下按顺序执行<br></p>
+<ol>
+<li>Rest：附加脚本或点击REST的时候执行<br></li>
+<li>Awake:带有Awake的物体被实例化的时候执行，包括RUN<br></li>
+<li>OnEnable:在物体的active设置为Enable的时候，包括Run<br></li>
+<li>Start:在run的时候<br></li>
+<li>FixedUpdate:每秒执行固定次数<br></li>
+<li>Update:每帧执行一次<br></li>
+<li>LateUpdate:每帧执行一次<br></li>
+<li>OnTriggerXXX:触发器检测<br></li>
+<li>OnCollisionXXX:碰撞器检测<br></li>
+<li>OnMouseXXX:鼠标事件检测<br></li>
+<li>OnGUI:最原始的UI设计，现在几乎不用了<br></li>
+<li>OnDisable:在物体的active设置为disable的时候<br></li>
+<li>OnDestroy:在物体被销毁的时候<br></li>
+</ol>
+<h2 id="Unity时间类"><a href="#Unity时间类" class="headerlink" title="Unity时间类"></a>Unity时间类</h2><ul>
+<li>Time.deltaTime:两帧之间的时间间隔</li>
+<li>Time.frameCount:帧数</li>
+<li>Time.time和Time.fixedTime:游戏运行的时间</li>
+<li>Time.timeSinceLevelLoad:Level载入后的时间，重新载入回清零</li>
+<li>Time.realtimeSinceStartup:游戏开始后的时间，包括暂停，常用来做性能测试</li>
+<li>Time.smoothDeltaTime:将DeltaTime变平滑</li>
+<li>Time.timeScale:时间比例，为0则暂停游戏,只针对乘上了deltaTime的物体</li>
+</ul>
+<h2 id="创建游戏物体"><a href="#创建游戏物体" class="headerlink" title="创建游戏物体"></a>创建游戏物体</h2><ol>
+<li>new GameObject(“Cube”)；括号内不写则为空物体</li>
+<li>GameObject.Instantiate();克隆一个物体，可以是预制体，也可以是GameObject</li>
+<li>GameObject.CreatPrimitive(PrimitiveType.Cube);创建一个基础物体</li>
+</ol>
+<h2 id="获取某个游戏对象"><a href="#获取某个游戏对象" class="headerlink" title="获取某个游戏对象"></a>获取某个游戏对象</h2><ol>
+<li>GameObject.Find(“name”)</li>
+<li>GameObject.FindWithTag(“tag.name”)</li>
+<li>GameObject.FindGameObjectsWithTag(“tag.name”)</li>
+<li>定义成共有成员，然后通过拖拽</li>
+<li>直接新建，然后就能进行操作了</li>
+</ol>
+<h2 id="获取某个组件"><a href="#获取某个组件" class="headerlink" title="获取某个组件"></a>获取某个组件</h2><ol>
+<li>先获取包含这个组件的游戏对象，然后通过GetComponent系列方法获得</li>
+<li>FindObjectType<type>()返回第一个符合类型的组件</type></li>
+<li>FindObjectsType<type>()返回所有的</type></li>
+<li>当组件是脚本的时候还可以通过实例化脚本类，然后通过类.实例.XX访问</li>
+</ol>
+<h2 id="执行其他脚本方法"><a href="#执行其他脚本方法" class="headerlink" title="执行其他脚本方法"></a>执行其他脚本方法</h2><ol>
+<li>BroadcastMessage (“Attack”);执行继承自MonoBehaviour的所有方法</li>
+<li>SendMessage(“Attack”);执行指定对象的方法</li>
+<li>SendMessageUpwards(“Attack”);执行指定对象及其父对象的方法</li>
+</ol>
+<h2 id="Invoke调用函数"><a href="#Invoke调用函数" class="headerlink" title="Invoke调用函数"></a>Invoke调用函数</h2><ul>
+<li>Invoke(“Attack”,time);time时间之后调用函数attack</li>
+<li>InvokeRepeating(“Attack”,time1,time2)；time2为调用间隔时间</li>
+<li>CancelInvoke(“Attack”);停止调用，不写具体方法则默认ALL</li>
+<li>IsInvoking(“Attack”);是否被调用，返回Bool</li>
+</ul>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><ul>
+<li>GetKey、Down、Up，GetAxis(GetAxisRaw只返回-1，0，1)监测键盘输入</li>
+<li>GetMouseButton、Down、Up,监测鼠标输入</li>
+<li>GetButton、Down、Up监测虚拟输入，如Horizontal,虚拟输入可以自定义NAME，而且可以对应多个按键</li>
+<li>除了GetAxis其他的返回bool类型</li>
+<li>GetTouch获取触摸输入（EasyTouch插件）</li>
+<li>静态方法如Input.mousePosition</li>
+</ul>
+<h2 id="Vector2"><a href="#Vector2" class="headerlink" title="Vector2"></a>Vector2</h2><ul>
+<li>Vector2.上下左右零一;如上为（1，0）</li>
+<li>magnitude返回长度</li>
+<li>sqrMagnitude不开根求长度</li>
+<li>normalized返回单位向量Normalize()将向量单位化</li>
+<li>x,y获取x或y</li>
+<li>V2是结构体不是类，在单独修改其中一个坐标的时候应该这样<br>transform.position=new Vector2(1,1);<br><br>Vector2 Pos=transform.position;<br><br>pos.x=2;<br><br>transform.position=pos;<br></li>
+<li>+、-、*、/、==，需要注意的是乘和除的对象是一个数字，加减是两个向量</li>
+<li>Angle夹角、ClampMagnitude夹紧长度、Distance长度、Dot点积、Lerp插值、MoveTowards匀速、Scale缩放、MAX、MIN、Reflect通过法向量反射，Slerp对向量插值（Lerp是对坐标插值）</li>
+</ul>
+<h2 id="Vector3"><a href="#Vector3" class="headerlink" title="Vector3"></a>Vector3</h2><p>相对V2，V3在方向上主要多了前后，有点积和叉积，Project获取一个向量在另一个向量上的投影</p>
+<h2 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h2><p>Random.Range(float,float)获取一个伪随机数<br><br>Random.InitState(（int）seed);给伪随机数种下一个种子，比如seed一直是0则随机数取值顺序是完全一样的，所以seed可以用时间进行赋值<br><br>其他随机的方法：Random.Vaule返回一个0.0-1.0之间的随机数；insideUnitCircle、insideUnitSphere在一个半径为1的圆或一个半径为1的球内随机生成一个坐标，可以通过*扩大范围</p>
+<h2 id="四元数Quaternion"><a href="#四元数Quaternion" class="headerlink" title="四元数Quaternion"></a>四元数Quaternion</h2><ul>
+<li>Quaternion.Euler(new Vector3(0,0,0))自动将欧拉角转换成四元数</li>
+<li>GameObject.rotation.eulerAngles将四元数转换成欧拉角</li>
+<li>Quaternion.LookRotation(vector3 direction);将面向，即Z轴方向指向目标位置，如direction=enemy.position-player.position;player.position=Quaternion.Look…</li>
+<li>可以使用Lerp或者Slerp使旋转更平滑，Lerp比Slerp更快</li>
+</ul>
+<h2 id="刚体"><a href="#刚体" class="headerlink" title="刚体"></a>刚体</h2><p>改变物体位置或角度时使用刚体Rigidbody会比transform快，因为transform会影响碰撞体，瞬间改变位置使用Rigidbody.position,平滑改变使用Rigidbody.MovePosition，角度为rotation和MoveRotation</p>
+<h2 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h2><p>获得和鼠标移到物体上面触发事件一样的效果：ScreenPointToRay(Input.mousePosition)，从鼠标出发发射一条射线</p>
+<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><h2 id="SceneManager"><a href="#SceneManager" class="headerlink" title="SceneManager"></a>SceneManager</h2><ul>
+<li>.sceneCount返回场景数量</li>
+<li>.GetActiveScene().name</li>
+<li>.GetSceneAt(0).name</li>
+<li>.activeSceneChanged+=OnChanged;void OnChanged(pramas){}</li>
+<li>.sceneLoaded+=…</li>
+</ul>
+<h2 id="Touches"><a href="#Touches" class="headerlink" title="Touches"></a>Touches</h2><h2 id="NGUI"><a href="#NGUI" class="headerlink" title="NGUI"></a>NGUI</h2><ol>
+<li>UIRoot画布</li>
+<li>Label文字控件、Panel容器控件、Sprites图片控件、Button按钮控件、Tween补间动画、Slider滑动器、PopupList下拉列表、CheckBox复选框、TextList文本列表、ScrollBal滚动条</li>
+<li>Sliced九宫切图</li>
+<li>图集Atlas</li>
+<li>动静字体</li>
+<li>Widget位置，深度，尺寸</li>
+<li>Anchor锚点</li>
+<li>HUDTEXT等插件</li>
+</ol>
+<h2 id="UGUI"><a href="#UGUI" class="headerlink" title="UGUI"></a>UGUI</h2><ul>
+<li>公告栏：ScrollRect+TEXT+slider+MASK</li>
+<li>按钮：IMAGE+button+Text</li>
+<li>血条，精力条，进度条：Slider+IMAGE</li>
+<li>冷却效果：IMAGE_filled+text</li>
+<li>TAB切换：Toggle+toggleGroup+GameObject.SetActive</li>
+<li>关卡选择:Slider+Toggle+layout</li>
+</ul>
+<h2 id="DoTween"><a href="#DoTween" class="headerlink" title="DoTween"></a>DoTween</h2><ul>
+<li>命名空间:using DG;</li>
+<li>对一个值进行抛物线运动：DOTween.To(()=&gt;value,x=&gt;value=x,new value,time);</li>
+<li>一个更快捷的方法:transform.Do(Local)Move(target,time);</li>
+<li>在需要动画重复播放或者倒放的时候现初始化给Tweener管理，设置SetAutoKill(false)防止重复创建，然后Pause防止初始化播放，然后调用tweener.PlayForward或者.PlayBackwards播放</li>
+<li>tranform.DoMove().From();从目标位置移动到当前位置，From(true);从相对于当前位置的目标位置移动到当前位置</li>
+<li>Tweener的部分方法，.SetEase(Ease.Method)设置动画曲线，.OnComplete(callback)完成之后执行某函数，OnStart、OnPause等一系列生命周期函数.SetLoops设置循环次数，0为1次</li>
+<li>打字机效果：text.DOText(“content”,time);</li>
+<li>震动效果:DOShakePosition(duration,strength)，放在摄像机上面即可</li>
+<li>颜色和透明度，.DOColor(Color,duration),.DOFade(target阿尔法,duration);</li>
+<li>DOTween可视化界面操作添加组件DOTweenAnimation;</li>
+<li>路径编辑器：可以做场景漫游，DOTweenPath组件</li>
+<li><a href="http://dotween.demigiant.com/" target="_blank" rel="noopener">Dotween官方文档</a></li>
+</ul>
+<h2 id="Mecanim"><a href="#Mecanim" class="headerlink" title="Mecanim"></a>Mecanim</h2><ul>
+<li>Unity里面四类动画为Animation动画、Button动画、2D精灵动画、Mecanim动画，统一来算都属于Animation</li>
+<li>如果动画是连在一起的需要自己进行动画切割</li>
+<li>Legacy只通过Animation控制，Generic包含了状态机，Animator控制器，Humanoid不仅有状态机还有动画重定向，可以给其他Humanoid共享动画,而且Humanoid可以通过动画控制人物移动</li>
+<li>一般在发布游戏的时候需要在模型RIG优化模型，即勾选Optimize</li>
+<li>在代码里给动画修改参数时，可以将参数名通过Animator.StringToHash转换成Int类型，多次修改该参数时可以避免输入错误</li>
+<li>混合树将多个动作混合起来，1D控制一个参数，如速度，2D控制两个参数，如速度和方向，2D分为一般，动作最好不同一个方向，自由，动作可以在同一个方向，卡迪尔，动作最好同一个方向。一般和自由需要包含2D参数为0，0的状态</li>
+<li>collider.bounds.size可以获得目标尺寸</li>
+<li>给动画添加曲线可以更加精确的检测动画的播放状态，如可以根据动画播放区间取消碰撞体</li>
+<li>MatchTarget可以将Avatar与目标匹配，使动画播放和切换更真实流畅</li>
+<li>Layers设置里面Mask遮罩可以设置新动作影响的部位，Blending可以重写覆盖原肢体动画也可以附加原肢体没有的动画,勾选IKPass之后当前层会在OnAnimatorIK函数里面调用</li>
+</ul>
+<h2 id="IK"><a href="#IK" class="headerlink" title="IK"></a>IK</h2><ol>
+<li>Creat GameObject Rigging player</li>
+<li>!IK : GameObject.Position = avatar.GetIkPosition(AvatarIkGoal.)</li>
+<li>IK : void OnAnimatorIK(int layerIndex){<br>if(layerIndex==0){}}<br><br>Position取决于球形控制器<br>avatar.SetIKPositionWeight(AvatarIKgoal.,1.0f)<br><br>avatar.SetIKPosition(AvatarIKGoal–,GameObject.Position)</li>
+</ol>
+<h2 id="TimeLine"><a href="#TimeLine" class="headerlink" title="TimeLine"></a>TimeLine</h2><p>可以控制多个动画，适合做场景漫游、特写等<br></p>
+<ul>
+<li>创建Timeline，添加playable director组件，添加轨道，修改轨道（加关键帧，静音，剪切成动画片段等）</li>
+<li>Timeline剪切成片段之后可以修改Extrapolation，对动画片段播放前后设置物体的状态</li>
+<li>timeline常用的是动画，音效和物体激活</li>
+</ul>
+<h2 id="NvaMesh"><a href="#NvaMesh" class="headerlink" title="NvaMesh"></a>NvaMesh</h2><ul>
+<li>NvaMeshPath.corners是一个存储了拐点的数组</li>
+</ul>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>magnitude : 求长度<br></li>
 <li>G力 ： 物体高速运动或变化速度时受到的力（m/s2、N/kg）一般用g当单位，1G力=1g<br></li>
 <li>Destroy:内存中还存在<br></li>
-<li>DestroyImmediate:立即全部销毁<br></li>
+<li>DestroyImmediate:立即全部销毁，可能会引起空指针<br></li>
 <li>transform.SetParent(要变化的父级，true则跟随父级一起变化)<br></li>
-<li>TransformDirection:变换成世界坐标<br></li>
+<li>TransformDirection:变换成世界坐标,在摄像机跟随中，将偏移量当做基于角色的局部坐标转换成世界坐标在LookAt即可<br></li>
 <li>GameObject.CreatPrimitive(Primitive.Sphere)创建一个基本形状</li>
 <li>A as B:类型强制转换</li>
 <li>AssetDataBase：访问asset中的资源</li>
+<li>编辑栏的center是物体的中心点，pivot是原点，对应物体的位置信息</li>
+<li>编辑栏的layers可以设置物体的显示和隐藏，设置物体锁定之后无法再选定和修改</li>
+<li>使物体无缝拼接的方法有设置snap步长+ctrl按步长移动物体，还有按住v之后自动对其顶点</li>
+<li>预制体创建实例之后，实例的属性名字不变粗才能受到预制体的同步修改，apply可以反向同步</li>
+<li>菜单栏GameObject里面可以Break预制体的连接</li>
+<li>transform.getcomponentsinchild&lt;&gt;()是包含父对象的</li>
+<li>协程里面可以用死循环加yield return 0模拟Updata方法</li>
+<li>vector3.movetowards(p,p,s);</li>
+<li>isActiveAndEnabled判断某个组件是否可用，设置为.Enable=true</li>
+<li>activeInHierarchy判断某个对象是否可用,设置为SetActive(true)</li>
+<li>System.DateTime.Now获取当前时间</li>
+<li>物体的旋转可以绕着自己的X轴和Z轴，但是Y轴一直是竖向的</li>
+<li>通过Addforce控制的运动会有一个加速度的效果</li>
+<li>StreamingAssets文件下的物体会被保留，不会在打包游戏的时候一起合并掉，不同平台的路径也不一样</li>
+<li>加载场景较慢时可以选择异步加载，此时可以获取一个加载进度，然后显示加载进度条</li>
+<li>通过脚本对UGUI添加监听，如按钮Gameobject.GetComponent<button>.onClick.AddListener(方法名)</button></li>
+<li>可以通过WWW在网上下载资源应用到项目中</li>
+<li>角色移动还可以通过角色碰撞器的SimpleMove方法实现</li>
+<li>碰撞检测方法是OnControllerColliderHit(ControllerColliderHit hit)</li>
+<li>销毁物体需要播放声音的时候可以使用AudioSource.PlayAtPoint(audio,where)</li>
 </ul>
 
       
@@ -428,7 +639,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#unity-Attibute"><span class="toc-number">1.</span> <span class="toc-text"><a href="#unity-Attibute" class="headerlink" title="unity Attibute"></a>unity Attibute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#委托"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x59D4;&#x6258;" class="headerlink" title="&#x59D4;&#x6258;"></a>&#x59D4;&#x6258;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x4E8B;&#x4EF6;" class="headerlink" title="&#x4E8B;&#x4EF6;"></a>&#x4E8B;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协程"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x534F;&#x7A0B;" class="headerlink" title="&#x534F;&#x7A0B;"></a>&#x534F;&#x7A0B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量修改已导入的资源"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;" class="headerlink" title="&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;"></a>&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入时自动修改"><span class="toc-number">5.1.</span> <span class="toc-text"><a href="#&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;" class="headerlink" title="&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;"></a>&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全局光照GI"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5168;&#x5C40;&#x5149;&#x7167;GI" class="headerlink" title="&#x5168;&#x5C40;&#x5149;&#x7167;GI"></a>&#x5168;&#x5C40;&#x5149;&#x7167;GI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动画控制器"><span class="toc-number">7.</span> <span class="toc-text"><a href="#&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;" class="headerlink" title="&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;"></a>&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间控制"><span class="toc-number">8.</span> <span class="toc-text"><a href="#&#x65F6;&#x95F4;&#x63A7;&#x5236;" class="headerlink" title="&#x65F6;&#x95F4;&#x63A7;&#x5236;"></a>&#x65F6;&#x95F4;&#x63A7;&#x5236;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点积和叉积"><span class="toc-number">9.</span> <span class="toc-text"><a href="#&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;" class="headerlink" title="&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;"></a>&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IK"><span class="toc-number">10.</span> <span class="toc-text"><a href="#IK" class="headerlink" title="IK"></a>IK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#碰撞"><span class="toc-number">11.</span> <span class="toc-text"><a href="#&#x78B0;&#x649E;" class="headerlink" title="&#x78B0;&#x649E;"></a>&#x78B0;&#x649E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鼠标样式"><span class="toc-number">12.</span> <span class="toc-text"><a href="#&#x9F20;&#x6807;&#x6837;&#x5F0F;" class="headerlink" title="&#x9F20;&#x6807;&#x6837;&#x5F0F;"></a>&#x9F20;&#x6807;&#x6837;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AssetBundle"><span class="toc-number">13.</span> <span class="toc-text"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打包"><span class="toc-number">13.1.</span> <span class="toc-text"><a href="#&#x6253;&#x5305;" class="headerlink" title="&#x6253;&#x5305;"></a>&#x6253;&#x5305;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载"><span class="toc-number">13.2.</span> <span class="toc-text"><a href="#&#x52A0;&#x8F7D;" class="headerlink" title="&#x52A0;&#x8F7D;"></a>&#x52A0;&#x8F7D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-number">13.3.</span> <span class="toc-text"><a href="#&#x5378;&#x8F7D;" class="headerlink" title="&#x5378;&#x8F7D;"></a>&#x5378;&#x8F7D;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#射线"><span class="toc-number">14.</span> <span class="toc-text"><a href="#&#x5C04;&#x7EBF;" class="headerlink" title="&#x5C04;&#x7EBF;"></a>&#x5C04;&#x7EBF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI"><span class="toc-number">16.</span> <span class="toc-text"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">17.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#unity-Attribute"><span class="toc-number">1.</span> <span class="toc-text"><a href="#unity-Attribute" class="headerlink" title="unity Attribute"></a>unity Attribute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#委托"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x59D4;&#x6258;" class="headerlink" title="&#x59D4;&#x6258;"></a>&#x59D4;&#x6258;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x4E8B;&#x4EF6;" class="headerlink" title="&#x4E8B;&#x4EF6;"></a>&#x4E8B;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协程"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x534F;&#x7A0B;" class="headerlink" title="&#x534F;&#x7A0B;"></a>&#x534F;&#x7A0B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量修改已导入的资源"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;" class="headerlink" title="&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;"></a>&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5DF2;&#x5BFC;&#x5165;&#x7684;&#x8D44;&#x6E90;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入时自动修改"><span class="toc-number">5.1.</span> <span class="toc-text"><a href="#&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;" class="headerlink" title="&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;"></a>&#x5BFC;&#x5165;&#x65F6;&#x81EA;&#x52A8;&#x4FEE;&#x6539;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全局光照GI"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5168;&#x5C40;&#x5149;&#x7167;GI" class="headerlink" title="&#x5168;&#x5C40;&#x5149;&#x7167;GI"></a>&#x5168;&#x5C40;&#x5149;&#x7167;GI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动画控制器"><span class="toc-number">7.</span> <span class="toc-text"><a href="#&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;" class="headerlink" title="&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;"></a>&#x52A8;&#x753B;&#x63A7;&#x5236;&#x5668;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间控制"><span class="toc-number">8.</span> <span class="toc-text"><a href="#&#x65F6;&#x95F4;&#x63A7;&#x5236;" class="headerlink" title="&#x65F6;&#x95F4;&#x63A7;&#x5236;"></a>&#x65F6;&#x95F4;&#x63A7;&#x5236;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点积和叉积"><span class="toc-number">9.</span> <span class="toc-text"><a href="#&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;" class="headerlink" title="&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;"></a>&#x70B9;&#x79EF;&#x548C;&#x53C9;&#x79EF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#碰撞"><span class="toc-number">10.</span> <span class="toc-text"><a href="#&#x78B0;&#x649E;" class="headerlink" title="&#x78B0;&#x649E;"></a>&#x78B0;&#x649E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鼠标样式"><span class="toc-number">11.</span> <span class="toc-text"><a href="#&#x9F20;&#x6807;&#x6837;&#x5F0F;" class="headerlink" title="&#x9F20;&#x6807;&#x6837;&#x5F0F;"></a>&#x9F20;&#x6807;&#x6837;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鼠标事件"><span class="toc-number">12.</span> <span class="toc-text"><a href="#&#x9F20;&#x6807;&#x4E8B;&#x4EF6;" class="headerlink" title="&#x9F20;&#x6807;&#x4E8B;&#x4EF6;"></a>&#x9F20;&#x6807;&#x4E8B;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathf"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Mathf" class="headerlink" title="Mathf"></a>Mathf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AssetBundle"><span class="toc-number">14.</span> <span class="toc-text"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打包"><span class="toc-number">14.1.</span> <span class="toc-text"><a href="#&#x6253;&#x5305;" class="headerlink" title="&#x6253;&#x5305;"></a>&#x6253;&#x5305;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载"><span class="toc-number">14.2.</span> <span class="toc-text"><a href="#&#x52A0;&#x8F7D;" class="headerlink" title="&#x52A0;&#x8F7D;"></a>&#x52A0;&#x8F7D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-number">14.3.</span> <span class="toc-text"><a href="#&#x5378;&#x8F7D;" class="headerlink" title="&#x5378;&#x8F7D;"></a>&#x5378;&#x8F7D;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#射线"><span class="toc-number">15.</span> <span class="toc-text"><a href="#&#x5C04;&#x7EBF;" class="headerlink" title="&#x5C04;&#x7EBF;"></a>&#x5C04;&#x7EBF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selection"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI"><span class="toc-number">17.</span> <span class="toc-text"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drawcall"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Drawcall" class="headerlink" title="Drawcall"></a>Drawcall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ugui使用总结（转）"><span class="toc-number">19.</span> <span class="toc-text"><a href="#ugui&#x4F7F;&#x7528;&#x603B;&#x7ED3;&#xFF08;&#x8F6C;&#xFF09;" class="headerlink" title="ugui&#x4F7F;&#x7528;&#x603B;&#x7ED3;&#xFF08;&#x8F6C;&#xFF09;"></a>ugui&#x4F7F;&#x7528;&#x603B;&#x7ED3;&#xFF08;&#x8F6C;&#xFF09;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#灯光"><span class="toc-number">20.</span> <span class="toc-text"><a href="#&#x706F;&#x5149;" class="headerlink" title="&#x706F;&#x5149;"></a>&#x706F;&#x5149;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现miss的情况"><span class="toc-number">21.</span> <span class="toc-text"><a href="#&#x51FA;&#x73B0;miss&#x7684;&#x60C5;&#x51B5;" class="headerlink" title="&#x51FA;&#x73B0;miss&#x7684;&#x60C5;&#x51B5;"></a>&#x51FA;&#x73B0;miss&#x7684;&#x60C5;&#x51B5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志输出"><span class="toc-number">22.</span> <span class="toc-text"><a href="#&#x65E5;&#x5FD7;&#x8F93;&#x51FA;" class="headerlink" title="&#x65E5;&#x5FD7;&#x8F93;&#x51FA;"></a>&#x65E5;&#x5FD7;&#x8F93;&#x51FA;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取游戏物体的几种方法"><span class="toc-number">23.</span> <span class="toc-text"><a href="#&#x83B7;&#x53D6;&#x6E38;&#x620F;&#x7269;&#x4F53;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x6E38;&#x620F;&#x7269;&#x4F53;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x6E38;&#x620F;&#x7269;&#x4F53;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景载入"><span class="toc-number">24.</span> <span class="toc-text"><a href="#&#x573A;&#x666F;&#x8F7D;&#x5165;" class="headerlink" title="&#x573A;&#x666F;&#x8F7D;&#x5165;"></a>&#x573A;&#x666F;&#x8F7D;&#x5165;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件函数"><span class="toc-number">25.</span> <span class="toc-text"><a href="#&#x4E8B;&#x4EF6;&#x51FD;&#x6570;" class="headerlink" title="&#x4E8B;&#x4EF6;&#x51FD;&#x6570;"></a>&#x4E8B;&#x4EF6;&#x51FD;&#x6570;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unity时间类"><span class="toc-number">26.</span> <span class="toc-text"><a href="#Unity&#x65F6;&#x95F4;&#x7C7B;" class="headerlink" title="Unity&#x65F6;&#x95F4;&#x7C7B;"></a>Unity&#x65F6;&#x95F4;&#x7C7B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建游戏物体"><span class="toc-number">27.</span> <span class="toc-text"><a href="#&#x521B;&#x5EFA;&#x6E38;&#x620F;&#x7269;&#x4F53;" class="headerlink" title="&#x521B;&#x5EFA;&#x6E38;&#x620F;&#x7269;&#x4F53;"></a>&#x521B;&#x5EFA;&#x6E38;&#x620F;&#x7269;&#x4F53;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取某个游戏对象"><span class="toc-number">28.</span> <span class="toc-text"><a href="#&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x6E38;&#x620F;&#x5BF9;&#x8C61;" class="headerlink" title="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x6E38;&#x620F;&#x5BF9;&#x8C61;"></a>&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x6E38;&#x620F;&#x5BF9;&#x8C61;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取某个组件"><span class="toc-number">29.</span> <span class="toc-text"><a href="#&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x7EC4;&#x4EF6;" class="headerlink" title="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x7EC4;&#x4EF6;"></a>&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x7EC4;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行其他脚本方法"><span class="toc-number">30.</span> <span class="toc-text"><a href="#&#x6267;&#x884C;&#x5176;&#x4ED6;&#x811A;&#x672C;&#x65B9;&#x6CD5;" class="headerlink" title="&#x6267;&#x884C;&#x5176;&#x4ED6;&#x811A;&#x672C;&#x65B9;&#x6CD5;"></a>&#x6267;&#x884C;&#x5176;&#x4ED6;&#x811A;&#x672C;&#x65B9;&#x6CD5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Invoke调用函数"><span class="toc-number">31.</span> <span class="toc-text"><a href="#Invoke&#x8C03;&#x7528;&#x51FD;&#x6570;" class="headerlink" title="Invoke&#x8C03;&#x7528;&#x51FD;&#x6570;"></a>Invoke&#x8C03;&#x7528;&#x51FD;&#x6570;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">32.</span> <span class="toc-text"><a href="#Input" class="headerlink" title="Input"></a>Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vector2"><span class="toc-number">33.</span> <span class="toc-text"><a href="#Vector2" class="headerlink" title="Vector2"></a>Vector2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vector3"><span class="toc-number">34.</span> <span class="toc-text"><a href="#Vector3" class="headerlink" title="Vector3"></a>Vector3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Random"><span class="toc-number">35.</span> <span class="toc-text"><a href="#Random" class="headerlink" title="Random"></a>Random</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四元数Quaternion"><span class="toc-number">36.</span> <span class="toc-text"><a href="#&#x56DB;&#x5143;&#x6570;Quaternion" class="headerlink" title="&#x56DB;&#x5143;&#x6570;Quaternion"></a>&#x56DB;&#x5143;&#x6570;Quaternion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#刚体"><span class="toc-number">37.</span> <span class="toc-text"><a href="#&#x521A;&#x4F53;" class="headerlink" title="&#x521A;&#x4F53;"></a>&#x521A;&#x4F53;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相机"><span class="toc-number">38.</span> <span class="toc-text"><a href="#&#x76F8;&#x673A;" class="headerlink" title="&#x76F8;&#x673A;"></a>&#x76F8;&#x673A;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Application"><span class="toc-number">39.</span> <span class="toc-text"><a href="#Application" class="headerlink" title="Application"></a>Application</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SceneManager"><span class="toc-number">40.</span> <span class="toc-text"><a href="#SceneManager" class="headerlink" title="SceneManager"></a>SceneManager</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Touches"><span class="toc-number">41.</span> <span class="toc-text"><a href="#Touches" class="headerlink" title="Touches"></a>Touches</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NGUI"><span class="toc-number">42.</span> <span class="toc-text"><a href="#NGUI" class="headerlink" title="NGUI"></a>NGUI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UGUI"><span class="toc-number">43.</span> <span class="toc-text"><a href="#UGUI" class="headerlink" title="UGUI"></a>UGUI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DoTween"><span class="toc-number">44.</span> <span class="toc-text"><a href="#DoTween" class="headerlink" title="DoTween"></a>DoTween</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mecanim"><span class="toc-number">45.</span> <span class="toc-text"><a href="#Mecanim" class="headerlink" title="Mecanim"></a>Mecanim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IK"><span class="toc-number">46.</span> <span class="toc-text"><a href="#IK" class="headerlink" title="IK"></a>IK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TimeLine"><span class="toc-number">47.</span> <span class="toc-text"><a href="#TimeLine" class="headerlink" title="TimeLine"></a>TimeLine</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NvaMesh"><span class="toc-number">48.</span> <span class="toc-text"><a href="#NvaMesh" class="headerlink" title="NvaMesh"></a>NvaMesh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">49.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -500,7 +711,7 @@ s.setAttribute('data-timestamp', +new Date());
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Tangzzzzzz
+    		&copy; 2018 Tangzzzzzz
     	</div>
       	<div class="footer-right">
       		

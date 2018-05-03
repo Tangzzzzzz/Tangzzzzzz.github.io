@@ -17,7 +17,7 @@
 <meta property="og:description" content="访问修饰符">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201108/8/0_1312777926f8T1.gif">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201108/8/0_1312777951sg1f.gif">
-<meta property="og:updated_time" content="2017-12-08T05:17:09.000Z">
+<meta property="og:updated_time" content="2017-12-20T01:27:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c#学习随笔">
 <meta name="twitter:description" content="访问修饰符">
@@ -183,31 +183,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><a id="more"></a>
+        <h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><a id="more"></a>
 <p>public–&gt;internal–&gt;protectedinternal–&gt;protected–&gt;private<br><br>无限制–&gt;本项目–&gt;本、子类、其他类–&gt;本、子类–&gt;本类</p>
-<h3 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h3><p>值类型：结构体、枚举、可空类型<br><br>值类型变量声明后，不管是否已经赋值，编译器为其分配内存。<br><img src="http://hi.csdn.net/attachment/201108/8/0_1312777926f8T1.gif" alt=""><br>引用类型：数组、类、接口、委托、object、字符串<br><br>当声明一个引用类型时，在栈中分配一小片内存用于容纳一个地址，当使用 new 创建一个类的实例时，分配堆上的空间，并把堆上空间的地址保存到栈上分配的小片空间中。<br><img src="http://hi.csdn.net/attachment/201108/8/0_1312777951sg1f.gif" alt=""></p>
-<h3 id="抽象类、虚函数、接口"><a href="#抽象类、虚函数、接口" class="headerlink" title="抽象类、虚函数、接口"></a>抽象类、虚函数、接口</h3><ul>
+<h2 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h2><p>值类型：结构体、枚举、可空类型<br><br>值类型变量声明后，不管是否已经赋值，编译器为其分配内存。<br><img src="http://hi.csdn.net/attachment/201108/8/0_1312777926f8T1.gif" alt=""><br>引用类型：数组、类、接口、委托、object、字符串<br><br>当声明一个引用类型时，在栈中分配一小片内存用于容纳一个地址，当使用 new 创建一个类的实例时，分配堆上的空间，并把堆上空间的地址保存到栈上分配的小片空间中。<br><img src="http://hi.csdn.net/attachment/201108/8/0_1312777951sg1f.gif" alt=""></p>
+<h2 id="抽象类、虚函数、接口"><a href="#抽象类、虚函数、接口" class="headerlink" title="抽象类、虚函数、接口"></a>抽象类、虚函数、接口</h2><ul>
 <li>抽象类：可以包含抽象方法和非抽象方法，无法被实例化只能被继承，子类必须重写所有的抽象方法<br></li>
 <li>抽象函数：<br><code>public abstract class Animal</code><br><br><code>{</code><br><br><code>public abstract void Sleep();</code><br><br><code>public abstract void Eat();</code><br><br><code>}</code><br></li>
 <li>虚函数：必须有自己的方法，哪怕是{}这样的空方法,可以被重写<br></li>
-<li>接口：和抽象类相似，但接口除了可以包含方法之外还可以包含属性、索引器、事件，而且这些成员都被定义为公有的。在派生类中除了必须实现方法外还必须实现这些成员变量。<br>一个类只能继承另一个类，但是可以继承好几个接口<br></li>
+<li>（隐藏方法）：用子类声明的对象则调用子类的隐藏方法，用父类声明的对象调用父类的隐藏方法；<br></li>
+<li>接口：和抽象类相似，但接口除了可以包含方法之外还可以包含属性、索引器、事件，而且这些成员都被定义为公有的。在派生类中除了必须实现方法外还必须实现这些成员变量。接口可以继承接口，但类继承接口之后必须实现这个接口和其继承的接口的所有方法<br>一个类只能继承另一个类，但是可以继承好几个接口<br></li>
+<li>密封类无法被继承，密封方法无法被重写</li>
 </ul>
-<h3 id="常量修饰符"><a href="#常量修饰符" class="headerlink" title="常量修饰符"></a>常量修饰符</h3><p>readonly<br><br>可以在声明和构造函数中出现<br><br>const<br><br>只能在声明中出现</p>
-<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><ul>
+<h2 id="常量修饰符"><a href="#常量修饰符" class="headerlink" title="常量修饰符"></a>常量修饰符</h2><p>readonly<br><br>可以在声明和构造函数中出现<br><br>const<br><br>只能在声明中出现</p>
+<h2 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h2><ul>
 <li>前序遍历：中左右</li>
 <li>中序遍历：左中右</li>
 <li>后序遍历：左右中</li>
 </ul>
-<h3 id="二进制原码、反码、补码"><a href="#二进制原码、反码、补码" class="headerlink" title="二进制原码、反码、补码"></a>二进制原码、反码、补码</h3><p>原码：二进制本身<br><br>反码：正数不变，负数除符号位，其余取反<br><br>补码：正数不变，负数除符号位，其余取反，结果+1<br><br>对于一个正数，二进制最右边的为1的位从1变为0等价于(n-1)&amp;(n)</p>
-<h3 id="属性访问器"><a href="#属性访问器" class="headerlink" title="属性访问器"></a>属性访问器</h3><p>get:读取或计算<br><br>set：设置或写入</p>
-<h3 id="ref、out"><a href="#ref、out" class="headerlink" title="ref、out"></a>ref、out</h3><p>ref和out使参数按引用传递，可以让方法返回多个值<br><br>ref有进有出，out只出不进</p>
+<h2 id="二进制原码、反码、补码"><a href="#二进制原码、反码、补码" class="headerlink" title="二进制原码、反码、补码"></a>二进制原码、反码、补码</h2><p>原码：二进制本身<br><br>反码：正数不变，负数除符号位，其余取反<br><br>补码：正数不变，负数除符号位，其余取反，结果+1<br><br>对于一个正数，二进制最右边的为1的位从1变为0等价于(n-1)&amp;(n)</p>
+<h2 id="属性访问器"><a href="#属性访问器" class="headerlink" title="属性访问器"></a>属性访问器</h2><p>get:读取或计算<br><br>set：设置或写入<br><br>通过set可以在设置value之前对value进行校验，如if(value&gt;0){age=value};</p>
+<h2 id="ref、out"><a href="#ref、out" class="headerlink" title="ref、out"></a>ref、out</h2><p>ref和out使参数按引用传递，可以让方法返回多个值<br><br>ref有进有出，out只出不进</p>
 <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><ul>
+<li>我们可以定一个int类型，不同的值表示不同的状态，如0对应魔法师，1对应战士，2对应弓箭手，但数字很难给人以直观的印象，所以我们使用枚举可以通过字符串来表示不同的状态</li>
 <li>多用于定义多个不同的状态，如人物状态，游戏开始结束状态<br></li>
 <li>通过“|”合并多个状态:Status=StatusEffect.Poison|StatusEffect.Slow<br></li>
 <li>通过“&amp;，～”移出状态：Status&amp;=~StatusEffect.Poison<br></li>
 <li>通过“&amp;”查看位值：if((Status&amp;StatusEffect.Posion)==StatusEffect.Poison)</li>
 </ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>string.Format:不需要console就可以用{0}{1}等代替参数</p>
+<h2 id="数据类型的范围"><a href="#数据类型的范围" class="headerlink" title="数据类型的范围"></a>数据类型的范围</h2><ul>
+<li>8位<br><br>sbyte : -128~127<br><br>byte : 0~255<br></li>
+<li>16位<br><br>short : 32768~32767<br></li>
+<li>32位<br><br>int :-二十一亿~二十一亿</li>
+<li>64位<br><br>Long</li>
+</ul>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><ul>
+<li>\n 换行</li>
+<li>\’ ‘</li>
+<li>\” “</li>
+<li>\ \</li>
+<li>\0 空</li>
+<li>\a 蜂鸣</li>
+<li>\b 退格</li>
+<li>\f 换页</li>
+<li>\r 回车</li>
+<li>\t 水平制表符 </li>
+<li>\v 垂直制表符<br>在字符串前面加上@将会无视转义字符，除非用两个””可以表示为”，字符串可以多行输入</li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li>ToLower()全部变成小写</li>
+<li>ToUpper()全部变成大写</li>
+<li>Trim()去掉前后的空格</li>
+<li>Split()以某个字符为中介拆分字符串</li>
+</ul>
+<h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p>委托的定义和函数很相似，委托需要加上delegate关键字，委托的定义不需要函数体；</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p><code>try{}
+catch(&lt;exceptionType&gt;e){}
+finally{}</code><br><br>try里放可能出错的代码，catch捕获可能出现的异常并进行处理，finally无论是否异常都会执行，catch不写异常默认捕获所有异常，catch和finally至少有一个，catch可以有多个，finally最多有一个</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>常用的一些属性<br></p>
+<ul>
+<li>Capacity：获取容量大小</li>
+<li>Add()：在最后添加元素</li>
+<li>Insert():在某个位置插入元素，后面的元素后移一位</li>
+<li>[index]：访问元素</li>
+<li>Count：查看列表元素个数</li>
+<li>RemoveAt():移除某个元素</li>
+<li>IndexOf()、LastIndexOf():返回某个元素的索引，一个从前往后，一个从后往前</li>
+<li>Sort()：排序</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>string.Format:不需要console就可以用{0}{1}等代替参数<br><br>在类的继承中，父类声明的对象可以用子类去构造<br><br>this和base可以用来给出提示查看当前类的字段和方法，this还能用来区分子类和父类重名的字段或方法<br><br>无参构造函数：子类会先调用父类的构造函数，在调用自己的构造函数<br><br>有参构造函数：子类如果不在构造函数后面加上：base()则会默认调用父类的无参构造函数。<br><br>使用static修饰的成员只能通过类名来访问，实例化对象的时候不包括静态对象。（无论类实例化多少次都只有一个固定的静态值）<br><br>列表是基于数组的，初始长度为0，空间不够时从4开始依次倍增长度创建新数组并转移数据，可以通过LIST.Capacity给列表设置或获取长度，count获取元素个数。<br><br>索引器：通过[index]这种形式访问数据</p>
 
       
 
@@ -329,7 +372,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#访问修饰符"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;"></a>&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值类型和引用类型"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;" class="headerlink" title="&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;"></a>&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类、虚函数、接口"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;" class="headerlink" title="&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;"></a>&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量修饰符"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;"></a>&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树遍历"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;" class="headerlink" title="&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;"></a>&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二进制原码、反码、补码"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;" class="headerlink" title="&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;"></a>&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性访问器"><span class="toc-number">7.</span> <span class="toc-text"><a href="#&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;" class="headerlink" title="&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;"></a>&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ref、out"><span class="toc-number">8.</span> <span class="toc-text"><a href="#ref&#x3001;out" class="headerlink" title="ref&#x3001;out"></a>ref&#x3001;out</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-number"></span> <span class="toc-text"><a href="#&#x679A;&#x4E3E;" class="headerlink" title="&#x679A;&#x4E3E;"></a>&#x679A;&#x4E3E;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#访问修饰符"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;"></a>&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#值类型和引用类型"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;" class="headerlink" title="&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;"></a>&#x503C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类、虚函数、接口"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;" class="headerlink" title="&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;"></a>&#x62BD;&#x8C61;&#x7C7B;&#x3001;&#x865A;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量修饰符"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;"></a>&#x5E38;&#x91CF;&#x4FEE;&#x9970;&#x7B26;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树遍历"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;" class="headerlink" title="&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;"></a>&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二进制原码、反码、补码"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;" class="headerlink" title="&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;"></a>&#x4E8C;&#x8FDB;&#x5236;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性访问器"><span class="toc-number">7.</span> <span class="toc-text"><a href="#&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;" class="headerlink" title="&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;"></a>&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#x5668;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref、out"><span class="toc-number">8.</span> <span class="toc-text"><a href="#ref&#x3001;out" class="headerlink" title="ref&#x3001;out"></a>ref&#x3001;out</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-number">9.</span> <span class="toc-text"><a href="#&#x679A;&#x4E3E;" class="headerlink" title="&#x679A;&#x4E3E;"></a>&#x679A;&#x4E3E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型的范围"><span class="toc-number">10.</span> <span class="toc-text"><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8303;&#x56F4;" class="headerlink" title="&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8303;&#x56F4;"></a>&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8303;&#x56F4;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转义字符"><span class="toc-number">11.</span> <span class="toc-text"><a href="#&#x8F6C;&#x4E49;&#x5B57;&#x7B26;" class="headerlink" title="&#x8F6C;&#x4E49;&#x5B57;&#x7B26;"></a>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串"><span class="toc-number">12.</span> <span class="toc-text"><a href="#&#x5B57;&#x7B26;&#x4E32;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;"></a>&#x5B57;&#x7B26;&#x4E32;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#委托"><span class="toc-number">13.</span> <span class="toc-text"><a href="#&#x59D4;&#x6258;" class="headerlink" title="&#x59D4;&#x6258;"></a>&#x59D4;&#x6258;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常处理"><span class="toc-number">14.</span> <span class="toc-text"><a href="#&#x5F02;&#x5E38;&#x5904;&#x7406;" class="headerlink" title="&#x5F02;&#x5E38;&#x5904;&#x7406;"></a>&#x5F02;&#x5E38;&#x5904;&#x7406;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表"><span class="toc-number">15.</span> <span class="toc-text"><a href="#&#x5217;&#x8868;" class="headerlink" title="&#x5217;&#x8868;"></a>&#x5217;&#x8868;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">15.1.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -401,7 +444,7 @@ s.setAttribute('data-timestamp', +new Date());
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Tangzzzzzz
+    		&copy; 2018 Tangzzzzzz
     	</div>
       	<div class="footer-right">
       		
